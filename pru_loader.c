@@ -19,13 +19,13 @@ int pru_init(void)
 	}
 }
 
-void pru_load(int pru_num)
+void pru_load(int pru_num, char* datafile, char* codefile)
 {
 	/* write data from data.bin */
-	prussdrv_load_datafile(pru_num, DATA_FILE);				//DATA_FILE is defined in the build script
+	prussdrv_load_datafile(pru_num, datafile);				//DATA_FILE is defined in the build script
 
 	/* execute code on pru0 */
-	prussdrv_exec_program(pru_num, BIN_FILE);				//BIN_FILE is defined in the build script
+	prussdrv_exec_program(pru_num, codefile);				//BIN_FILE is defined in the build script
 }
 
 void pru_stop(int pru_num)
