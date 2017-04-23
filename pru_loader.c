@@ -21,11 +21,11 @@ int pru_init(void)
 
 void pru_load(int pru_num, char* datafile, char* codefile)
 {
-	/* write data from data.bin */
-	prussdrv_load_datafile(pru_num, datafile);				//DATA_FILE is defined in the build script
+	// load datafile in PRU memory
+	prussdrv_load_datafile(pru_num, datafile);
 
-	/* execute code on pru0 */
-	prussdrv_exec_program(pru_num, codefile);				//BIN_FILE is defined in the build script
+	// load and execute codefile in PRU 
+	prussdrv_exec_program(pru_num, codefile);
 }
 
 void pru_stop(int pru_num)
